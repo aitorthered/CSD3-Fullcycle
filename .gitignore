@@ -2,6 +2,7 @@
 
 # Package Files #
 *.jar
+~mockito-all-1.9.5.jar
 *.war
 *.ear
 

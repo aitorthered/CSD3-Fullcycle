@@ -16,13 +16,22 @@ public class ServiceUsuario {
 	}
 
 	public boolean canLogin(String user, String password) {
-		throw new RuntimeException("NOT IMPLEMENTED YET ServiceLogin.canLogin");
+		if (user == null || user.isEmpty() || password == null
+				|| password.isEmpty()) {
+			return false;
+		}
+		User myUser = this.myUserDao.findById(user);
+		if (myUser == null) {
+			return false;
+		}
+		return this.myUserDao.isValidPassword(myUser, password);
 	}
 
 	public boolean insertUser(String userId, String nombre, String correo,
 			String password) {
 		User myUser = new User();
-		if (nombre.equals("") || userId.equals("") || correo.equals("")) {
+		if (nombre.equals("") || userId.equals("") || correo.equals("")
+				|| password.equals("")) {
 			return false;
 		}
 		myUser.setName(nombre);
@@ -33,6 +42,7 @@ public class ServiceUsuario {
 		} catch (DaoException daoe) {
 			return false;
 		}
+		myUserDao.setPassword(myUser, password);
 		return true;
 	}
 

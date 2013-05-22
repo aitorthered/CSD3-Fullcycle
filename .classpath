@@ -9,7 +9,6 @@
 	<classpathentry kind="lib" path="lib/ognl-2.6.9.jar"/>
 	<classpathentry kind="lib" path="lib/xom-1.2.5.jar"/>
 	<classpathentry kind="lib" path="lib/concordion-1.4.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/aitor.mendaza/Documents/WorkspaceCSD/mockito-all-1.9.5.jar"/>
 	<classpathentry kind="lib" path="lib/mockito-all-1.9.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
